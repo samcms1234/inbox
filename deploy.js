@@ -1,12 +1,13 @@
 const HDWalletProvider = require('truffle-hdwallet-provider');
 const Web3 = require('web3');
 const {interface, bytecode} = require('./compile');
+require('dotenv').config();
 
 
 const provider = new HDWalletProvider(
-  'lift onion adult become ethics arena virus city bean punch resist casual',
-  'https://rinkeby.infura.io/v3/a652313768a14fcea79a6b709cca2b71'
-);
+  process.env.SECRET.toString(),
+  process.env.URL.toString()
+  );
 
 const web3 = new Web3(provider);
 
